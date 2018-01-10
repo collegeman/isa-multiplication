@@ -55,6 +55,7 @@
       </h3>
       <span slot="modal-ok">Play Again</span>
     </b-modal>
+    <span style="position:fixed; bottom:10px; left:10px;">{{ height }}</span>
   </div>
 </template>
 
@@ -72,6 +73,7 @@ export default {
   data () {
     return {
       i: -1,
+      height: 0,
       numCorrect: 0,
       numIncorrect: 0,
       numProblems: 20,
@@ -148,7 +150,9 @@ export default {
     }
   },
   mounted () {
-    //
+    setInterval(() => {
+      this.height = $(window).height()
+    }, 100)
   },
   methods: {
     start () {
