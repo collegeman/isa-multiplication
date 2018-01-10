@@ -156,6 +156,9 @@ export default {
   methods: {
     onFocusAnswer () {
       $('body').addClass('kb')
+      setTimeout(() => {
+        $(window).scrollTop(120)
+      })
     },
     onBlurAnswer () {
       $('body').removeClass('kb')
