@@ -3,7 +3,7 @@
     <div class="deck bg-light d-flex flex-column justify-content-center">
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-12 col-sm-6 col-md-8 col-lg-4" style="min-width:360px;">
+          <div class="col-12 col-sm-6 col-md-8 col-lg-4 shrink-for-kb" style="min-width:360px;">
             <div class="card text-right">
               <div class="card-body">
                 <div class="media factor">
@@ -16,6 +16,8 @@
                   <div class="media-body px-3" v-html="factor2"></div>
                 </div>
                 <input id="answer" type="tel"
+                  @focus="onFocusAnswer()"
+                  @blur="onBlurAnswer()"
                   :class="{ 
                     'form-control answer pr-3': true, 
                     'text-danger': correct === false, 
@@ -55,7 +57,6 @@
       </h3>
       <span slot="modal-ok">Play Again</span>
     </b-modal>
-    <span style="position:fixed; bottom:10px; left:10px;">{{ height }}</span>
   </div>
 </template>
 
@@ -73,7 +74,6 @@ export default {
   data () {
     return {
       i: -1,
-      height: 0,
       numCorrect: 0,
       numIncorrect: 0,
       numProblems: 20,
@@ -150,11 +150,15 @@ export default {
     }
   },
   mounted () {
-    setInterval(() => {
-      this.height = $(window).height()
-    }, 100)
+    //
   },
   methods: {
+    onFocusAnswer () {
+      $('body').addClass('kb')
+    },
+    onBlurAnswer () {
+      $('body').removeClass('kb')
+    },
     start () {
       // initialize problem set
       for (let i of range(0, this.numProblems)) {
