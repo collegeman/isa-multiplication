@@ -1,14 +1,14 @@
 # isa-multiplication
 
-> Practice your multiplication, my daughter.
+> I made this mini-app for my kid, to help her practice her multiplication facts. I make other stuff, [too](https://github.com/collegeman).
 
-I made this mini-app for my kid, to help her practice her multiplication facts.
+## License
 
-I make other stuff, [too](https://github.com/collegeman).
+It's all MIT, except for the sound effects that were obviously stolen from Super Mario World.
 
-# How to make changes
+## How to make changes
 
-## Build Setup
+### Build Setup
 
 ``` bash
 # clone the project
@@ -23,6 +23,6 @@ npm run dev
 npm run watch
 ```
 
-## Bonus Points
+### Bonus Points
 
 Use [`yarn`](https://yarnpkg.com/en/) instead of `npm`. 
