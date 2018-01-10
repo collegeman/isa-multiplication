@@ -49,7 +49,8 @@ body.kb {
   width: 100%;
 
   .progress {
-    border-radius: 0;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
   }
 } 
 
@@ -69,6 +70,7 @@ body.kb {
   width: 100%;
 
   .progress {
-    border-radius: 0;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
   }
 }

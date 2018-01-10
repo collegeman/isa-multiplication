@@ -24,17 +24,18 @@
                     'text-success': correct === true 
                   }" v-model="answer">
               </div>
+              <div class="progress-wrapper">
+                <b-progress :value="counter" :max="100" animated :variant="i === problems.length ? 'success' : ''"></b-progress>
+              </div>
+              <div class="timer-wrapper">
+                <b-progress :value="countdown" :max="timeLimit" :variant="timerVariant"></b-progress>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <div class="progress-wrapper">
-      <b-progress :value="counter" :max="100" animated :variant="i === problems.length ? 'success' : ''"></b-progress>
-    </div>
-    <div class="timer-wrapper">
-      <b-progress :value="countdown" :max="timeLimit" :variant="timerVariant"></b-progress>
-    </div>
+    
     <b-modal :hide-header="true" :visible="true" ok-only @hidden="start()" :button-size="'lg'">
       <h1 class="text-center">Let's practice our multiplication facts again!</h1>
       <span slot="modal-ok">Start!</span>
@@ -85,7 +86,7 @@ export default {
       counter: 0,
       countdown: 0,
       timeLimit: 20, // num of seconds to answer the question
-      timerVariant: 'primary',
+      timerVariant: 'dark',
       answer: null,
       correctSound: audio.create('dist/audio/smw_1-up.mp3'),
       incorrectSound: audio.create('dist/audio/smw_riding_yoshi.mp3'),
@@ -136,7 +137,7 @@ export default {
         } else if (this.countdown / this.timeLimit <= 0.50) {
           this.timerVariant = 'warning'
         } else {
-          this.timerVariant = 'primary'
+          this.timerVariant = 'dark'
         }
       } else {
         this.correct = false
