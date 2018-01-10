@@ -26,6 +26,7 @@ body.kb {
   text-align: right;
   border-top: 5px solid #111;
   color: $body-color;
+  border-radius: 0;
 
   &:focus {
     border: none;
