@@ -85,9 +85,9 @@ export default {
       timeLimit: 20, // num of seconds to answer the question
       timerVariant: 'primary',
       answer: null,
-      correctSound: audio.create('/dist/audio/smw_1-up.mp3'),
-      incorrectSound: audio.create('/dist/audio/smw_riding_yoshi.mp3'),
-      winSound: audio.create('/dist/audio/smw_power-up.mp3'),
+      correctSound: audio.create('dist/audio/smw_1-up.mp3'),
+      incorrectSound: audio.create('dist/audio/smw_riding_yoshi.mp3'),
+      winSound: audio.create('dist/audio/smw_power-up.mp3'),
       correct: null
     }
   },
@@ -100,6 +100,7 @@ export default {
         this.answer = null
         this.factor1 = this.problems[this.i].factor1
         this.factor2 = this.problems[this.i].factor2
+        $('#answer').focus()
       } else {
         this.paused = true
         this.$refs.done.show()
