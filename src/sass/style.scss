@@ -1,0 +1,60 @@
+@import 'variables';
+
+@import '~bootstrap/scss/bootstrap';
+@import '~font-awesome/scss/font-awesome';
+
+
+.factor {
+  margin-bottom: 0;
+  font-size: 96px;
+
+  .sign {
+    font-size: 64px;
+  }
+}
+
+.answer {
+  font-size: 96px;
+  background-color: #fff;
+  border: 0;
+  text-align: right;
+  border-top: 5px solid #111;
+  color: $body-color;
+  &:focus {
+    border: none;
+    border-top: 5px solid #111;
+    outline: none;
+    box-shadow: none;
+    color: $body-color;
+  }
+}
+
+.progress-wrapper {
+  position: absolute;
+  top: 0;
+  width: 100%;
+
+  .progress {
+    border-radius: 0;
+  }
+} 
+
+.deck {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+}
+
+.timer-wrapper {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+
+  .progress {
+    border-radius: 0;
+  }
+}
