@@ -18,12 +18,19 @@
   text-align: right;
   border-top: 5px solid #111;
   color: $body-color;
+  
   &:focus {
     border: none;
     border-top: 5px solid #111;
     outline: none;
     box-shadow: none;
     color: $body-color;
+  }
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
   }
 }
 

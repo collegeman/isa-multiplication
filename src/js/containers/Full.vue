@@ -15,7 +15,7 @@
                   </div>
                   <div class="media-body px-3" v-html="factor2"></div>
                 </div>
-                <input id="answer" type="number"
+                <input id="answer" type="tel"
                   :class="{ 
                     'form-control answer pr-3': true, 
                     'text-danger': correct === false, 
